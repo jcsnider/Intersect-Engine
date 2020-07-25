@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
   <Import Project="..\packages\Microsoft.NetFramework.Analyzers.3.0.0\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.3.0.0\build\Microsoft.NetFramework.Analyzers.props')" />
@@ -77,6 +77,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Core\Audio.cs" />
+    <Compile Include="Core\Bootstrapper.cs" />
+    <Compile Include="Core\ClientContext.cs" />
     <Compile Include="Core\ClientCommandLineOptions.cs" />
     <Compile Include="Core\Controls\ControlEnum.cs" />
     <Compile Include="Core\Controls\ControlMap.cs" />
@@ -108,6 +110,7 @@
     <Compile Include="General\Enums.cs" />
     <Compile Include="General\Globals.cs" />
     <Compile Include="Interface\IMutableInterface.cs" />
+    <Compile Include="Interface\MutableInterface.cs" />
     <Compile Include="Interface\Shared\Errors\ErrorWindow.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\MapItem.cs" />
@@ -137,6 +140,9 @@
     <Compile Include="Interface\Menu\CreditsWindow.cs" />
     <Compile Include="Interface\Menu\ResetPasswordWindow.cs" />
     <Compile Include="Interface\Menu\ForgotPasswordWindow.cs" />
+    <Compile Include="Plugins\ClientPluginEntry.cs" />
+    <Compile Include="Plugins\Contexts\ClientPluginContext.cs" />
+    <Compile Include="Plugins\Helpers\ClientLifecycleHelper.cs" />
     <Compile Include="Plugins\IClientPluginContext.cs" />
     <Compile Include="Plugins\Interfaces\IClientLifecycleHelper.cs" />
     <Compile Include="Utilities\MathHelper.cs" />
@@ -273,6 +279,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="public-intersect.bek" />
     <None Include="app.manifest" />
+    <None Include="PluginApiDevelopment.Client.targets" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.bmp">
